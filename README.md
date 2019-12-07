@@ -11,6 +11,7 @@ In Windows systems run commands with cmd.
 Requirements
 ---
 Work only in python 3.
+Another requirements in requirements.txt.
 
 
 Structure
