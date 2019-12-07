@@ -1,1 +1,1 @@
-from system.system import system
+from system import system
