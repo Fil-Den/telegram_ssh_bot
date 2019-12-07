@@ -3,7 +3,14 @@ Telegram bot for controle your remote server
 
 This telegram bot is intendended for administrating your operating   
 system. Server accept CLI commands in messages and return standart   
-output in answer message.   
+output in answer message.
+
+In Windows systems run commands with cmd.
+
+
+Requirements
+---
+Work only in python 3.
 
 
 Structure
