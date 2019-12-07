@@ -25,8 +25,6 @@ class TelegramBot:
                                     use_context=True)
         else:
             self._updater = Updater(token=token, use_context=True)
-        logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s -' +
-                            '%(message)s', level=logging.INFO)
 
     def set_command_handler(self, command, handler):
         '''set command handler function'''
