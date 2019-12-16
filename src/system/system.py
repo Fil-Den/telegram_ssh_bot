@@ -28,14 +28,17 @@ class System:
         '''
         command = (['cmd', '/c', 'chcp', '65001', '&']) + (command.split())
         try:
-            result = subprocess.run(command, stdout=subprocess.PIPE)
+            result = subprocess.run(command, stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE)
             output = result.stdout.decode('utf-8', errors='replace')
             '''And remove first line from output, because first line is
                 chmod 65001 output.'''
             output = output[output.find('\n'):]
+            if not output.strip():
+                output = result.stderr.decode('utf-8', errors='replace')
         except Exception as ex:
-            output = str(ex)
-        return output
+            output = "Error: " + str(ex)
+        return output or ("Error")
 
     def __runCommandLinux(self, command):
         '''
@@ -43,11 +46,14 @@ class System:
         '''
         command = command.split()
         try:
-            result = subprocess.run(command, stdout=subprocess.PIPE)
+            result = subprocess.run(command, stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE)
             output = result.stdout.decode('utf-8', errors='replace')
+            if not output.strip():
+                output = result.stderr.decode('utf-8', errors='replace')
         except Exception as ex:
-            output = str(ex)
-        return output
+            output = "Error: " + str(ex)
+        return output or ("Error")
 
 
 system = System()
