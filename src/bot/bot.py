@@ -8,8 +8,8 @@ from telegram.ext import (
 
 class TelegramBot:
     '''class for work with telegram'''
-    def __init__(self, token, proxy_url, connection_timeout=7,
-                 username=None, passord=None):
+    def __init__(self, token, proxy_url,
+                 username=None, passord=None, connection_timeout=7):
         '''initialize variables'''
         if proxy_url:
             request_kwargs = {
