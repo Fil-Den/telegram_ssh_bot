@@ -76,7 +76,8 @@ def main():
         bot.set_command_handler(
             cmd['command_name'],
             MsgHandler(
-                (lambda cmd: system.runCommand(cmd['command'])),
+                # (lambda cmd: system.runCommand('dir')),
+                (lambda msg: system.runCommand(cmd['command'])),
                 allowed_users=allowed_users
             )
         )
