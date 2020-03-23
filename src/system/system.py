@@ -7,8 +7,7 @@ for command execution.
 class ISystem:
 
     def runCommand(self, command):
-        '''
-        Run command in your iperation system.
+        '''Run command in your iperation system.
         Command - str with CLI command.
         '''
         pass

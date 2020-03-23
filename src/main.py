@@ -1,5 +1,4 @@
-'''
-Programm entry point.
+'''Programm entry point.
 Set log format,
 parse config and run bot, also
 set messages and commands handlers.
