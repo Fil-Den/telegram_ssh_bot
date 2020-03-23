@@ -1,3 +1,4 @@
+'''For more usable import from that's packet.'''
 from sys import platform
 from .system import ISystem
 from .winSystem import WinSystem

@@ -1,4 +1,4 @@
-'''store json schema for config'''
+'''Store json schema for config.'''
 
 
 CONFIG_JSON_SCHEMA = {

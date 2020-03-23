@@ -9,9 +9,7 @@ from .system import ISystem
 class LinSystem(ISystem):
 
     def runCommand(self, command):
-        '''
-        Run command in Lunux systems.
-        '''
+        '''Run command in Lunux systems.'''
         command = command.split()
         try:
             result = subprocess.run(command, stdout=subprocess.PIPE,

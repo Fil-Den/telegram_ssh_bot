@@ -1,8 +1,7 @@
-'''
-Programm entry point.
+'''Programm entry point.
 Set log format,
 parse config and run bot, also
-set messages and commands handlers
+set messages and commands handlers.
 '''
 import json
 import logging
@@ -18,9 +17,9 @@ from jsonschema import (
 
 
 def getPathToCfg():
-    '''create argument parser and try get config path. If can't get
+    '''Create argument parser and try get config path. If can't get
     return default value cfg.json. If user wait help message print it
-    and exit program'''
+    and exit program.'''
     parser = argparse.ArgumentParser(
         description='Run "ssh" bot. Allows send cli commands in telegram ' +
                     'and seen standart output.')
@@ -34,12 +33,12 @@ def getPathToCfg():
 
 
 def runAllCommand(command):
-    '''run command and return result'''
+    '''Run command and return result.'''
     return system.runCommand(command)
 
 
 def main():
-    '''programm entry point'''
+    '''Programm entry point.'''
     cfgPath = getPathToCfg()
 
     # set log output format in json

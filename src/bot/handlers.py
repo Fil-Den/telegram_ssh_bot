@@ -1,20 +1,20 @@
-'''contains handler for processing messages'''
+'''Contains handler for processing messages.'''
 
 
 class MsgHandler:
-    '''processing commands and messages from telegram'''
+    '''Processing commands and messages from telegram.'''
 
     MAX_MESSAGE_SIZE = 4096
     RESTRICTED_MSG = "Access not allowed"
 
     def __init__(self, commandFunc, allowed_users=None):
-        '''add command for process. 
-        If allowed_users=None, then all users allowed'''
+        '''Add command for process.
+        If allowed_users=None, then all users allowed.'''
         self._commandFunc = commandFunc
         self._allowedUsers = allowed_users
 
     def __call__(self, update, context):
-        '''command handler'''
+        '''Command handler.'''
         if (self._allowedUsers and
                 update.message.from_user.id not in self._allowedUsers):
             context.bot.send_message(
